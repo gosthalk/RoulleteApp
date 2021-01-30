@@ -1,2 +1,4 @@
-let radio = document.querySelector('input[type=radio]:checked').value;
+'use strict';
+
+let radioSelected = document.querySelector('input[type=radio]:checked').value;
 

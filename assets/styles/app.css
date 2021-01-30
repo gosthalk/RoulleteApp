@@ -12,7 +12,7 @@ body {
 #canvas {
     width: 60%;
     height: 600px;
-    background-color: black;
+    background-color: darkslategray;
 }
 
 #bets {
@@ -22,7 +22,7 @@ body {
 }
 
 #bet_section {
-    background-color: #5eb5e0;
+    background-color: darkgray;
     width: 100%;
     height: 500px;
     padding-top: 15%;
@@ -32,7 +32,6 @@ body {
     width: 70%;
     height: 70%;
     margin-left: 15%;
-    background-color: plum;
     cursor: default;
     user-select: none;
 }
@@ -47,7 +46,7 @@ body {
 
 #zero {
     display: flex;
-    background-color: darkgreen;
+    background-color: forestgreen;
     height: 100%;
     width: 10%;
     align-items: center;
@@ -88,7 +87,7 @@ body {
     align-items: center;
     justify-content: center;
     width: 8.33333333333%;
-    background-color: darkblue;
+    background-color: darkslateblue;
     outline: 2px solid black;
     outline-offset: -2px;
     color: white;
@@ -99,7 +98,7 @@ body {
     align-items: center;
     justify-content: center;
     width: 8.33333333333%;
-    background-color: darkblue;
+    background-color: darkslateblue;
     outline: 2px solid black;
     outline-offset: -2px;
     color: white;
@@ -110,7 +109,7 @@ body {
     align-items: center;
     justify-content: center;
     width: 8.33333333333%;
-    background-color: darkblue;
+    background-color: darkslateblue;
     outline: 2px solid black;
     outline-offset: -2px;
     color: white;
@@ -180,7 +179,7 @@ body {
 
 #chips {
     height: 100px;
-    background-color: darkkhaki;
+    background-color: gray;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -202,5 +201,13 @@ input[type="radio"] + img {
 input[type="radio"]:checked + img {
     border: 2px solid wheat;
     border-radius: 50%;
+}
+
+#red_bet {
+    background-color: red;
+}
+
+#black_bet {
+    background-color: black;
 }
 
