@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DefaultController!{% endblock %}
+
+{% block body %}
+    <div id="main">
+        <canvas id="canvas"></canvas>
+        <div id="bets">
+            <div id="bet_section">
+                <div id="bet_table">
+
+                </div>
+            </div>
+            <div id="chips">
+                <form class="chip_select">
+                    <label>
+                        <input type="radio" name="chip" value="10" checked>
+                        <img src="http://placehold.it/45x45/f00/fff&text=10">
+                    </label>
+
+                    <label>
+                        <input type="radio" name="chip" value="50">
+                        <img src="http://placehold.it/45x45/234f1e/fff&text=50">
+                    </label>
+
+                    <label>
+                        <input type="radio" name="chip" value="100">
+                        <img src="http://placehold.it/45x45/000000/fff&text=100">
+                    </label>
+
+                    <label>
+                        <input type="radio" name="chip" value="500">
+                        <img src="http://placehold.it/45x45/55f/fff&text=500">
+                    </label>
+
+                    <label>
+                        <input type="radio" name="chip" value="1000">
+                        <img src="http://placehold.it/45x45/80604d/fff&text=1000">
+                    </label>
+
+                    <label>
+                        <input type="radio" name="chip" value="5000">
+                        <img src="http://placehold.it/45x45/ff6700/fff&text=5000">
+                    </label>
+                </form>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
