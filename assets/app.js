@@ -13,3 +13,4 @@ import './bootstrap';
 
 import './js/wheel.js';
 import './js/radio.js';
+import './js/bets.js';
