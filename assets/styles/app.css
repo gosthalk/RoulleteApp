@@ -44,6 +44,10 @@ body {
     height: 70%;
 }
 
+#img_bet {
+    border-radius: 50%;
+}
+
 #zero {
     display: flex;
     background-color: forestgreen;
@@ -54,6 +58,11 @@ body {
     color:white;
     outline: 2px solid black;
     outline-offset: -2px;
+}
+
+#zero:first-child {
+    display: flex;
+    flex-direction: column;
 }
 
 #numbers {
@@ -84,6 +93,7 @@ body {
 
 .first_row_numbers {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 8.33333333333%;
@@ -96,6 +106,7 @@ body {
 .second_row_numbers {
     display: flex;
     align-items: center;
+    flex-direction: column;
     justify-content: center;
     width: 8.33333333333%;
     background-color: darkslateblue;
@@ -107,6 +118,7 @@ body {
 .third_row_numbers {
     display: flex;
     align-items: center;
+    flex-direction: column;
     justify-content: center;
     width: 8.33333333333%;
     background-color: darkslateblue;
@@ -132,6 +144,11 @@ body {
     outline: 2px solid black;
     outline-offset: -2px;
     color: white;
+}
+
+.row_bet:first-child {
+    display: flex;
+    flex-direction: column;
 }
 
 .bottom_bets_box {

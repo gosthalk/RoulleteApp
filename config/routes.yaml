@@ -5,3 +5,8 @@ index:
 login:
   path: /login
   controller: App\Controller\SecurityController::login
+
+balance:
+  path: /getBalance
+  controller: App\Controller\BalanceController::getBalance
+  methods: GET|POST
