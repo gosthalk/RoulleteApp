@@ -3,6 +3,19 @@
 {% block title %}Hello DefaultController!{% endblock %}
 
 {% block body %}
+    <header id="header">
+        {% if app.user %}
+            <div id="logged">
+                <div id="balance"> Баланс : {{ balance }} </div>
+                <div id="logout_div"> <a id="logout" href="{{ path('app_logout') }}">Logout</a> </div>
+            </div>
+        {% elseif not app.user %}
+            <div id="login_div">
+                <a id="login" href="/login">Войти</a>
+                <a id="register" href="/register">Зарегистрироваться</a>
+            </div>
+        {% endif %}
+    </header>
     <div id="main">
         <canvas id="canvas"></canvas>
         <div id="bets">

@@ -13,8 +13,14 @@ class DefaultController extends AbstractController
      */
     public function index(): Response
     {
+        if($this->isGranted('IS_AUTHENTICATED_FULLY')){
+            $balance = $this->getUser()->getBalance();
+        }else{
+            $balance = 0;
+        }
         return $this->render('default/index.html.twig', [
             'controller_name' => 'DefaultController',
+            'balance' => $balance,
         ]);
     }
 }

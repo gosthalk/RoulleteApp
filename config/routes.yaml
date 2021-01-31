@@ -10,3 +10,8 @@ balance:
   path: /getBalance
   controller: App\Controller\BalanceController::getBalance
   methods: GET|POST
+
+calculate_bet:
+  path: /calculateBet
+  controller: App\Controller\CalculateController::calculate
+  methods: GET|POST

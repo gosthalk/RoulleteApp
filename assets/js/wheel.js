@@ -918,6 +918,19 @@ setInterval(function (){
         winNumber = Math.random()*sections.length|0;
         spinTo(winNumber, 5000);
     }
+
+    $.ajax({
+        type:'POST',
+        url:'calculateBet',
+        data: {
+            // post bets array and winNumber to server
+        },
+        dataType: 'json',
+        success : function (response){
+
+        }
+    });
+
 }, 30000);
 
 
