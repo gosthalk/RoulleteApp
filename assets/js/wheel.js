@@ -1,24 +1,10 @@
 let canvas = document.getElementById("canvas");
 
-
-let radio = document.querySelector('input[name="chip"]:checked').value;
-let img_bet = document.createElement('img');
 let img_href = 'http://placehold.it/25x25/aa3/fff&text=';
 let balance = 0;
-let blc = 0;
+let blc = 1000;
 
-let bets = new Map([
-    ['1',0], ['2',0], ['3',0], ['4',0], ['4',0],
-    ['5',0], ['6',0], ['7',0], ['8',0], ['9',0],
-    ['10',0], ['11',0], ['12',0], ['13',0], ['14',0],
-    ['15',0], ['16',0], ['17',0], ['18',0], ['19',0],
-    ['20',0], ['21',0], ['22',0], ['23',0], ['24',0],
-    ['25',0], ['26',0], ['27',0], ['28',0], ['29',0],
-    ['30',0], ['31',0], ['32',0], ['33',0], ['34',0],
-    ['35',0], ['36',0], ['0',0], ['1-1',0], ['2-1',0],
-    ['3-1',0], ['1-12',0], ['2-12',0], ['3-12',0], ['1-18',0],
-    ['19-36',0], ['even',0], ['odd',0], ['red',0], ['black',0],
-]);
+let bets = new Array(49).fill(0);
 
 let sections = ["0", "32", "15", "19", "4",
     "21", "2", "25", "17", "34",
@@ -174,352 +160,741 @@ function sleep( sleepDuration ){
 $(".bet_value").click(function () {
     let currentBet = $(this).text();
     console.log(blc);
+    let radio = document.querySelector('input[type=radio]:checked').value;
     switch (currentBet){
         case '1':
             if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
                 img_bet.src = '';
-                bets['1'] += radio;
+                bets[0] += Number(radio);
                 blc -= radio;
-                let text = bets['1'].toString();
-                console.log(text);
+                let text = bets[0].toString();
                 img_bet.src = img_href + text;
                 $($(this)).append(img_bet);
             }
             break;
         case '2':
-            if(blc < radio){
-                tempBets['2'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[1] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[1].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '3':
-            if(blc < radio){
-                tempBets['3'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[2] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[2].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '4':
-            if(blc < radio){
-                tempBets['4'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[3] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[3].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '5':
-            if(blc < radio){
-                tempBets['5'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[4] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[4].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '6':
-            if(blc < radio){
-                tempBets['6'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[5] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[5].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '7':
-            if(blc < radio){
-                tempBets['7'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[6] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[6].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '8':
-            if(blc < radio){
-                tempBets['8'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[7] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[7].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '9':
-            if(blc < radio){
-                tempBets['9'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[8] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[8].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '10':
-            if(blc < radio){
-                tempBets['10'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[9] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[9].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '11':
-            if(blc < radio){
-                tempBets['11'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[10] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[10].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '12':
-            if(blc < radio){
-                tempBets['12'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[11] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[11].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '13':
-            if(blc < radio){
-                tempBets['13'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[12] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[12].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '14':
-            if(blc < radio){
-                tempBets['14'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[13] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[13].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '15':
-            if(blc < radio){
-                tempBets['15'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[14] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[14].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '16':
-            if(blc < radio){
-                tempBets['16'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[15] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[15].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '17':
-            if(blc < radio){
-                tempBets['17'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[16] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[16].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '18':
-            if(blc < radio){
-                tempBets['18'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[17] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[17].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '19':
-            if(blc < radio){
-                tempBets['19'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[18] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[18].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '20':
-            if(blc < radio){
-                tempBets['20'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[19] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[19].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '21':
-            if(blc < radio){
-                tempBets['21'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[20] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[20].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '22':
-            if(blc < radio){
-                tempBets['22'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[21] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[21].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '23':
-            if(blc < radio){
-                tempBets['23'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[22] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[22].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '24':
-            if(blc < radio){
-                tempBets['24'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[23] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[23].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '25':
-            if(blc < radio){
-                tempBets['25'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[24] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[24].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '26':
-            if(blc < radio){
-                tempBets['26'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[25] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[25].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '27':
-            if(blc < radio){
-                tempBets['27'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[26] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[26].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '28':
-            if(blc < radio){
-                tempBets['28'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[27] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[27].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '29':
-            if(blc < radio){
-                tempBets['29'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[28] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[28].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '30':
-            if(blc < radio){
-                tempBets['30'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[29] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[29].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '31':
-            if(blc < radio){
-                tempBets['31'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[30] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[30].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '32':
-            if(blc < radio){
-                tempBets['32'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[31] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[31].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '33':
-            if(blc < radio){
-                tempBets['33'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[32] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[32].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '34':
-            if(blc < radio){
-                tempBets['34'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[33] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[33].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '35':
-            if(blc < radio){
-                tempBets['35'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[34] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[34].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '36':
-            if(blc < radio){
-                tempBets['36'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[35] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[35].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '0':
-            if(blc < radio){
-                tempBets['0'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[36] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[36].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '1-1':
-            if(blc < radio){
-                tempBets['1-1'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[37] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[37].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '2-1':
-            if(blc < radio){
-                tempBets['2-1'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[38] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[38].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '3-1':
-            if(blc < radio){
-                tempBets['3-1'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[39] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[39].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '1-12':
-            if(blc < radio){
-                tempBets['1-12'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[40] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[40].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '2-12':
-            if(blc < radio){
-                tempBets['2-12'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[41] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[41].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '3-12':
-            if(blc < radio){
-                tempBets['3-12'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[42] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[42].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '1-18':
-            if(blc < radio){
-                tempBets['1-18'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[43] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[43].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case '19-36':
-            if(blc < radio){
-                tempBets['19-36'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[44] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[44].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case 'even':
-            if(blc < radio){
-                tempBets['even'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[45] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[45].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case 'odd':
-            if(blc < radio){
-                tempBets['odd'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[46] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[46].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case 'red':
-            if(blc < radio){
-                tempBets['red'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[47] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[47].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case 'black':
-            if(blc < radio){
-                tempBets['black'] += radio;
+            if(blc >= radio){
+                if($(this).children('img')){
+                    $(this).children('img').remove();
+                }
+                let img_bet = document.createElement('img');
+                img_bet.id = 'img_bet';
+                img_bet.src = '';
+                bets[48] += Number(radio);
                 blc -= radio;
-                // append img to bets board
+                let text = bets[48].toString();
+                img_bet.src = img_href + text;
+                $($(this)).append(img_bet);
             }
             break;
         case 'default':
