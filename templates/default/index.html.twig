@@ -4,9 +4,12 @@
 
 {% block body %}
     <header id="header">
+        <div id="logo">
+            KEKWait
+        </div>
         {% if app.user %}
             <div id="logged">
-                <div id="balance"> Баланс : {{ balance }} </div>
+                <div id="balance"> Баланс : <div id="balance_value"> {{ balance }} </div></div>
                 <div id="logout_div"> <a id="logout" href="{{ path('app_logout') }}">Logout</a> </div>
             </div>
         {% elseif not app.user %}
@@ -16,6 +19,7 @@
             </div>
         {% endif %}
     </header>
+    <div id="timer"></div>
     <div id="main">
         <canvas id="canvas"></canvas>
         <div id="bets">
@@ -90,6 +94,9 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div id="clr_btn">
+                    <input type="button" value="Clear bets">
                 </div>
             </div>
             <div id="chips">

@@ -3,14 +3,25 @@ body {
 }
 
 #header {
+    display: flex;
+    flex-direction: row;
     width: 100%;
     height: 50px;
     background-color: dimgray;
     padding: 5px;
 }
 
+#logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+    height: 40px;
+    color: white;
+}
+
 #logged {
-    float: right;
+    margin-left: 75%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,7 +31,7 @@ body {
 }
 
 #login_div {
-    float: right;
+    margin-left: 75%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,6 +60,16 @@ body {
 #logout {
     color: white;
     text-decoration: none;
+}
+
+#timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: darkslategray;
+    color: navajowhite;
 }
 
 #main {
@@ -83,6 +104,15 @@ body {
     margin-left: 15%;
     cursor: default;
     user-select: none;
+}
+
+#balance {
+    display: flex;
+    flex-direction: row;
+}
+
+#balance_value {
+    margin-left: 5px;
 }
 
 .up_bets_box {
@@ -276,4 +306,15 @@ input[type="radio"]:checked + img {
 #black_bet {
     background-color: black;
 }
+
+#clr_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 7%;
+    margin-left: 75%;
+    width: 20%;
+    height: 40px;
+}
+
 

@@ -1,10 +1,11 @@
 let canvas = document.getElementById("canvas");
 
 let img_href = 'http://placehold.it/25x25/aa3/fff&text=';
-let balance = 0;
-let blc = 1000;
+let blc = Number($("#balance_value").html());
+let count = 30;
 
 let bets = new Array(49).fill(0);
+let timer_prepare = 5000;
 
 let sections = ["0", "32", "15", "19", "4",
     "21", "2", "25", "17", "34",
@@ -159,7 +160,6 @@ function sleep( sleepDuration ){
 
 $(".bet_value").click(function () {
     let currentBet = $(this).text();
-    console.log(blc);
     let radio = document.querySelector('input[type=radio]:checked').value;
     switch (currentBet){
         case '1':
@@ -902,36 +902,57 @@ $(".bet_value").click(function () {
     }
 });
 
+$("#timer").html("Настраиваем колесо...");
+
 setInterval(function (){
-    $.ajax({
-        type:'POST',
-        url:"/getBalance",
-        dataType:'json',
-        success: function (response){
-            balance = response.balance;
-            blc = balance;
-        }
-    });
-
-
-    if(!running){
-        winNumber = Math.random()*sections.length|0;
-        spinTo(winNumber, 5000);
+    timer = setInterval(function() {
+    $("#timer").html("Делайте ставки...<br>" + --count);
+    if(count == 25)
+        $("#balance_value").html(blc);
+    if(count == 0){
+        $("#timer").html("Roll");
+        clearInterval(timer);
     }
+}, 1000);}, 36000);
 
-    $.ajax({
-        type:'POST',
-        url:'calculateBet',
-        data: {
-            // post bets array and winNumber to server
-        },
-        dataType: 'json',
-        success : function (response){
+setInterval(function (){
+    if(count == 0) {
 
+        /*$.ajax({
+            type: 'POST',
+            url: "/getBalance",
+            dataType: 'json',
+            success: function (response) {
+                balance = response.balance;
+                blc = balance;
+            }
+        });*/
+
+
+        if (!running) {
+            winNumber = Math.random() * sections.length | 0;
+            spinTo(winNumber, 5000);
         }
-    });
 
-}, 30000);
+        $.ajax({
+            type:'POST',
+            url:'/calculateBet',
+            dataType: 'json',
+            data:{
+                winNum: winNumber,
+                bts: bets,
+                balance: blc,
+            },
+            success : function (response){
+                blc = response.balance;
+                console.log(blc);
+            }
+        });
+
+        count = 30;
+
+    }
+},3000);
 
 
 
